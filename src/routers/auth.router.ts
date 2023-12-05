@@ -22,9 +22,6 @@ router.post('/login', async (req: Request, res: Response) => {
 	const user = await prisma.user.findUnique({
 		where: {
 			username,
-		},
-		include: {
-			settings: true,
 		}
 	});
 	
@@ -101,9 +98,6 @@ router.get('/check/:token', async (req: Request, res: Response) => {
 		user: await prisma.user.findUnique({
 			where: {
 				id: session.userId,
-			},
-			include: {
-				settings: true,
 			}
 		}),
 	});

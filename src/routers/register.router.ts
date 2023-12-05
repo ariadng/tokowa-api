@@ -46,9 +46,6 @@ router.post('/', async (req: Request, res: Response) => {
 		let user: User | null = await prisma.user.findUnique({
 			where: {
 				username,
-			},
-			include: {
-				settings: true,
 			}
 		});
 

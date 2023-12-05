@@ -10,9 +10,6 @@ router.get('/current', async (req: Request, res: Response) => {
 	
 	const currentUser = await prisma.user.findFirst({
 		where: { id: Number(user.id) },
-		include: {
-			settings: true,
-		}
 	});
 	
 	return res.json({
