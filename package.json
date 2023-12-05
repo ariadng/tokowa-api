@@ -5,7 +5,8 @@
 	"main": "index.ts",
 	"scripts": {
 		"dev": "nodemon src/index.ts",
-		"db:start": "docker compose up -d"
+		"db:start": "docker compose up -d",
+		"pm2": "NODE_ENV=production pm2 start src/index.ts --watch"
 	},
 	"author": "Aria Dhanang",
 	"license": "UNLICENSED",
