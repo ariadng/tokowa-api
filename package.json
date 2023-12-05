@@ -4,6 +4,8 @@
 	"description": "API for Calorie App",
 	"main": "index.ts",
 	"scripts": {
+		"start": "npm install && npm run build && NODE_ENV=production pm2 start -f ./build/index.js",
+		"build": "rm -rf build/ && tsc && node ./scripts/tsc/path.js",
 		"dev": "nodemon src/index.ts",
 		"db:start": "docker compose up -d",
 		"pm2": "NODE_ENV=production pm2 start src/index.ts --watch"
